@@ -14,6 +14,8 @@ Last updated 2026-11-17. **Documents only. No code written or run.**
 
 - 2026-11-17: voice model is **`deepseek/deepseek-v4.1-flash-1017`** via OpenRouter (listed 2026-11-17 at $0.036 in / $0.500 out per million tokens; the Council handoff also uses it). Per the handoff, requests use JSON-schema output with reasoning disabled. Quality for in-character writing is untested; swap after measuring.
 
+- 2026-11-17: the OpenRouter key goes in `/Volumes/WS4TB/cloud-council/.env.local`, created by the owner (`OPENROUTER_API_KEY=...`). It is gitignored. Claude never reads or prints it; the app loads it at run time. Not yet created.
+
 ## Open items (need the owner)
 1. **Name.** `cloud-council` is a working name.
 2. **Cost target** for multi-turn debates: set after measuring real cost per debate.
