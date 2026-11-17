@@ -25,4 +25,4 @@ A second part lets you list phrases you often type ("done", "deploy", "sample da
 - `PROGRESS.md`: status and open items
 
 ## Dependency on Council
-Verified quotes need a mentor corpus, and the sky needs the user's approved principles. Both are built by Council (corpus pipeline M6, constitution M5), which is not in this repo. How this repo gets them is an open decision (see PROGRESS.md).
+Verified quotes need a mentor corpus, and the sky needs the user's approved principles. Both are built by Council (corpus pipeline M6, constitution M5), which is not in this repo. This repo reads a Council export file (corpus with verified chunks, plus approved principles) rather than calling Council live. The export format is still to be defined.
