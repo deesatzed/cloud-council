@@ -11,7 +11,7 @@ Extracted from the Council handoff (`docs/BUILD_PLAN.md`, M11 and M12). They ass
 
 **Acceptance**
 - Unit: stance → left/right/middle position; next-speaker choice; a voiced line containing a quotation mark is retried and then shown without quote handling; a fabricated quote in `cites` produces no card.
-- e2e (mocks): a debate streams at least 3 turns; every voiced bubble has `data-simulated="true"` and the label; every `[data-quote]` is verified; the budget stop shows "paused: budget"; reduced-motion shows the transcript.
+- e2e (real low-priced model, capped key): a debate streams at least 3 turns; every voiced bubble has `data-simulated="true"` and the label; every `[data-quote]` is verified; the budget stop shows "paused: budget"; reduced-motion shows the transcript.
 - Measure and record real cost per debate in `PROGRESS.md` before setting a cost target.
 
 ## M12: Trigger phrases (after M10; independent of M11)

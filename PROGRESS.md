@@ -12,10 +12,11 @@ Last updated 2026-11-17. **Documents only. No code written or run.**
 
 - 2026-11-17: **no mocks or fake accounts.** Tests and demos call a real, low-priced OpenRouter model with a dollar-capped API key (the cap is set on the OpenRouter key; the app also enforces `COST_CAP_USD`). The key lives only in the environment.
 
+- 2026-11-17: voice model is **`deepseek/deepseek-v4.1-flash-1017`** via OpenRouter (listed 2026-11-17 at $0.036 in / $0.500 out per million tokens; the Council handoff also uses it). Per the handoff, requests use JSON-schema output with reasoning disabled. Quality for in-character writing is untested; swap after measuring.
+
 ## Open items (need the owner)
 1. **Name.** `cloud-council` is a working name.
-2. **Which model.** The owner picks the OpenRouter model from the current list (looked up 2026-11-17).
-3. **Cost target** for multi-turn debates: set after measuring real cost per debate.
-4. **Portrait image rights** unchecked; use abstract silhouettes until recorded.
-5. **`MENTOR_VOICE` untested.** Model IDs must be looked up and chosen by the owner.
-6. **Repo is public** at https://github.com/deesatzed/cloud-council. Pushes are authorized by the owner for this repo.
+2. **Cost target** for multi-turn debates: set after measuring real cost per debate.
+3. **Portrait image rights** unchecked; use abstract silhouettes until recorded.
+4. **`MENTOR_VOICE` untested.** Model IDs must be looked up and chosen by the owner.
+5. **Repo is public** at https://github.com/deesatzed/cloud-council. Pushes are authorized by the owner for this repo.
