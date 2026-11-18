@@ -20,6 +20,8 @@ Last updated 2026-11-17. **Documents only. No code written or run.**
 
 - 2026-11-17: first export covers four mentors: **Marcus Aurelius** (Meditations), **Benjamin Franklin** (Autobiography), **Henry David Thoreau** (Walden and Civil Disobedience), **Florence Nightingale** (Notes on Nursing). The script checks Project Gutenberg's copyright flag for each and skips any that fail.
 
+- 2026-11-17: first principles are **derived from the owner's CLAUDE.md** (8 drafts in `local/principles.json`, gitignored, status `draft`). The owner approved sending approved principles to OpenRouter inside debate prompts. They are work-style rules, not health or identifying data. The owner edits and approves them; only `approved` ones are used.
+
 ## Open items (need the owner)
 1. **Name.** `cloud-council` is a working name.
 2. **Cost target** for multi-turn debates: set after measuring real cost per debate.
