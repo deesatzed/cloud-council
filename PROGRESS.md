@@ -18,6 +18,8 @@ Last updated 2026-11-17. **Documents only. No code written or run.**
 
 - 2026-11-17: the first export is made by a **small export script in this repo** (tooling only; the debate app reads the file and never runs the pipeline). It downloads real public-domain texts for 3-5 mentors from Project Gutenberg, splits, indexes and writes the export. No mocks. This refines the decision above: no runtime corpus pipeline here, but one-off export tooling is allowed.
 
+- 2026-11-17: first export covers four mentors: **Marcus Aurelius** (Meditations), **Benjamin Franklin** (Autobiography), **Henry David Thoreau** (Walden and Civil Disobedience), **Florence Nightingale** (Notes on Nursing). The script checks Project Gutenberg's copyright flag for each and skips any that fail.
+
 ## Open items (need the owner)
 1. **Name.** `cloud-council` is a working name.
 2. **Cost target** for multi-turn debates: set after measuring real cost per debate.
