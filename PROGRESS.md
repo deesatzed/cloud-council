@@ -16,6 +16,8 @@ Last updated 2026-11-17. **Documents only. No code written or run.**
 
 - 2026-11-17: the OpenRouter key goes in `/Volumes/WS4TB/cloud-council/.env.local`, created by the owner (`OPENROUTER_API_KEY=...`). It is gitignored. Claude never reads or prints it; the app loads it at run time. Not yet created.
 
+- 2026-11-17: the first export is made by a **small export script in this repo** (tooling only; the debate app reads the file and never runs the pipeline). It downloads real public-domain texts for 3-5 mentors from Project Gutenberg, splits, indexes and writes the export. No mocks. This refines the decision above: no runtime corpus pipeline here, but one-off export tooling is allowed.
+
 ## Open items (need the owner)
 1. **Name.** `cloud-council` is a working name.
 2. **Cost target** for multi-turn debates: set after measuring real cost per debate.
