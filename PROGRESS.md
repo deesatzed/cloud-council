@@ -1,9 +1,13 @@
 # PROGRESS
 
-Last updated 2026-11-17. **Documents only. No code written or run.**
+Last updated 2026-11-18. **Project scaffold and export script exist; the export has NOT been run, and the debate screen is not built.**
 
 ## Done
 - Repo created from the specs in the Council handoff repo (`/Volumes/WS4TB/abetterme-council-handoff`, commit 209f3bb).
+
+- Next.js 16.4.6, React 19.3.1, TypeScript 7.0.2 scaffold (`npm run build` and `tsc --noEmit` pass; the home page is an "under construction" stub).
+- `src/lib/quotes.ts`: `verifyQuote` as specified. No tests yet (see open items).
+- `scripts/export-corpus.ts` (`npm run export:corpus`): written and loads under `tsx`; **never run against Gutenberg**. It checks each work's Gutenberg record (title, author, "Public domain in the USA") before using it, caches downloads in `corpus/raw/`, waits 3 s between requests, and writes `data/export/council-export.json`.
 
 ## Decisions
 - 2026-11-17: this repo reads a **Council export file** (corpus with verified chunks, plus approved principles). It does not call Council live and does not build its own corpus pipeline. The export format is still to be defined; Council's M10 plan includes an export.
@@ -22,7 +26,14 @@ Last updated 2026-11-17. **Documents only. No code written or run.**
 
 - 2026-11-17: first principles are **derived from the owner's CLAUDE.md** (8 drafts in `local/principles.json`, gitignored, status `draft`). The owner approved sending approved principles to OpenRouter inside debate prompts. They are work-style rules, not health or identifying data. The owner edits and approves them; only `approved` ones are used.
 
-## Open items (need the owner)
+## Open items
+**Blocked / not yet verified**
+- **Export not run.** On 2026-11-18, www.gutenberg.org returned HTTP 503 ("Temporarily Down", retry-after 3600). Gutendex (the catalog API the handoff names) returns HTTP 403 to scripts behind a Cloudflare challenge, so the script does not use it. Re-run `npm run export:corpus` after Gutenberg is back.
+- **Gutenberg ids come from memory** (2680, 148, 205, 17366). The script rejects any id whose record doesn't match the expected title, author and rights, but none has been checked yet.
+- **Heuristic filter only.** The LLM "authorial" step and embeddings need a model key and weren't built. Translator introductions may remain in the export, and retrieval must use keyword search until embeddings exist.
+- **No tests yet, on purpose.** Under the no-mocks rule, tests for the chunker and `verifyQuote` will use real passages from the downloaded texts, so they wait for the first successful export.
+
+**Need the owner**
 1. **Name.** `cloud-council` is a working name.
 2. **Cost target** for multi-turn debates: set after measuring real cost per debate.
 3. **Portrait image rights** unchecked; use abstract silhouettes until recorded.

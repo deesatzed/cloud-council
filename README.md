@@ -2,7 +2,7 @@
 
 A visual, real-time debate between historical mentors, plus user-set trigger phrases that bring your own principles into the moment you act. Spun out of A Better Me: Council so it can be built and changed separately.
 
-**Status: design documents only. No application code has been written or run.**
+**Status: early. Project scaffold and an export script exist; the debate screen is not built yet. See PROGRESS.md.**
 
 ## For a novice
 You describe a decision. A sky fills with clouds that turn into the faces of historical writers (Marcus Aurelius, Franklin, Nightingale and others). They talk it through and argue with each other. Clouds drift toward the option each one favors, so you can see where the council splits. When a mentor's real, verified words apply, they fall as a quote card with a citation. Everything a mentor says in its own voice is labeled as simulated.
@@ -17,6 +17,8 @@ A second part lets you list phrases you often type ("done", "deploy", "sample da
 5. **Personal data stays on this machine** unless the owner approves a specific destination.
 
 ## Layout
+- `app/`, `src/lib/`: the Next.js app (currently a stub page and the quote verifier)
+- `scripts/export-corpus.ts`: one-off tool that builds the corpus export from Project Gutenberg
 - `docs/SPEC.md`: Cloud Council screen (§13) and trigger phrases (§14)
 - `docs/PROMPTS.md`: the `MENTOR_VOICE` prompt
 - `docs/BUILD_PLAN.md`: milestones M11 (Cloud Council) and M12 (trigger phrases)

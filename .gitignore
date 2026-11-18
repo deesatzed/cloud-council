@@ -5,3 +5,9 @@ node_modules/
 *.db
 corpus/raw/
 local/
+node_modules/
+.next/
+next-env.d.ts
+data/
+corpus/
+*.tsbuildinfo
