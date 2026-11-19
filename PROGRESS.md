@@ -1,12 +1,14 @@
 # PROGRESS
 
-Last updated 2026-11-18. **Project scaffold and export script exist; the export has NOT been run, and the debate screen is not built.**
+Last updated 2026-11-19. **Project scaffold and export script exist; the export has NOT been run, and the debate screen is not built.**
 
 ## Done
 - Repo created from the specs in the Council handoff repo (`/Volumes/WS4TB/abetterme-council-handoff`, commit 209f3bb).
 
 - Next.js 16.4.6, React 19.3.1, TypeScript 7.0.2 scaffold (`npm run build` and `tsc --noEmit` pass; the home page is an "under construction" stub).
 - `src/lib/quotes.ts`: `verifyQuote` as specified. No tests yet (see open items).
+- Sky visuals (first build, spec §13 feature 1): `src/components/CloudSky.tsx` (canvas clouds with faint faces, Option A left / Option B right, horizon band, names on pills), `src/lib/skyPhysics.ts` (stance to position, spring), `SkyPlayground.tsx` (the user drags a cloud or picks a radio button; nothing is simulated). Home page shows the four first-export mentors by name and years from the roster. `npx vitest run`: 5 of 5 pass (physics only). `tsc` and `npm run build` pass.
+- Checked by eye: one headless-Chrome screenshot at 1000 px wide (light mode, all four mentors at "between"). The Chrome extension was not connected.
 - `scripts/export-corpus.ts` (`npm run export:corpus`): written and loads under `tsx`; **never run against Gutenberg**. It checks each work's Gutenberg record (title, author, "Public domain in the USA") before using it, caches downloads in `corpus/raw/`, waits 3 s between requests, and writes `data/export/council-export.json`.
 
 ## Decisions
@@ -32,6 +34,9 @@ Last updated 2026-11-18. **Project scaffold and export script exist; the export 
 - **Gutenberg ids come from memory** (2680, 148, 205, 17366). The script rejects any id whose record doesn't match the expected title, author and rights, but none has been checked yet.
 - **Heuristic filter only.** The LLM "authorial" step and embeddings need a model key and weren't built. Translator introductions may remain in the export, and retrieval must use keyword search until embeddings exist.
 - **No tests yet, on purpose.** Under the no-mocks rule, tests for the chunker and `verifyQuote` will use real passages from the downloaded texts, so they wait for the first successful export.
+
+- **Not yet verified in a browser:** dragging a cloud, hover wake-up of faces, dark mode, reduced-motion, keyboard use of the radio buttons, and the phone layout (the one phone-width screenshot looked clipped, but headless Chrome enforces a minimum window width, so it proves nothing).
+- **Not built:** rain-drop quote cards, tap-to-ask, the debate itself, the principles band content, the real faces (only abstract shading so far).
 
 **Need the owner**
 1. **Name.** `cloud-council` is a working name.

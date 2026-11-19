@@ -1,0 +1,39 @@
+:root {
+  --bg: #f6f8fb;
+  --ink: #14233c;
+  --muted: #55657d;
+  --line: #d5dde9;
+  --card: #ffffff;
+  --accent: #2f6fb5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --ink: #e9eefb;
+    --muted: #9aa8c4;
+    --line: #26304d;
+    --card: #131a30;
+    --accent: #7fb2e8;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.lede { margin: 0 0 16px; color: var(--muted); }
+.sky { position: relative; width: 100%; height: min(68vh, 560px); min-height: 380px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); touch-action: none; }
+.sky-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.side { position: absolute; top: 12px; padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; background: rgba(255,255,255,0.72); color: #14233c; pointer-events: none; }
+.side-a { left: 12px; }
+.side-b { right: 12px; }
+.horizon { position: absolute; left: 0; right: 0; bottom: 0; height: 15%; display: flex; align-items: center; justify-content: center; background: linear-gradient(to top, rgba(40,70,50,0.55), rgba(40,70,50,0.18)); color: #f2f7ef; font-size: 0.85rem; pointer-events: none; }
+.hint { color: var(--muted); font-size: 0.9rem; margin: 10px 0 16px; }
+.mentor-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.mentor-list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 10px 12px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.mentor-name { font-weight: 600; }
+.mentor-years { color: var(--muted); font-weight: 400; margin-left: 6px; font-size: 0.9rem; }
+.stance { border: 0; margin: 0; padding: 0; display: flex; gap: 14px; }
+.stance label { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; cursor: pointer; }
+.stance input { accent-color: var(--accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 520px) { .sky { min-height: 340px; } .stance { gap: 10px; } }
