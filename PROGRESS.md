@@ -28,6 +28,8 @@ Last updated 2026-11-19. **Project scaffold and export script exist; the export 
 
 - 2026-11-17: first principles are **derived from the owner's CLAUDE.md** (8 drafts in `local/principles.json`, gitignored, status `draft`). The owner approved sending approved principles to OpenRouter inside debate prompts. They are work-style rules, not health or identifying data. The owner edits and approves them; only `approved` ones are used.
 
+- 2026-11-19: Project Gutenberg was still in maintenance (HTTP 503), and `aleph.gutenberg.org` failed its certificate check (not bypassed). The owner chose to **wait and retry** the export later rather than switch sources.
+
 ## Open items
 **Blocked / not yet verified**
 - **Export not run.** On 2026-11-18, www.gutenberg.org returned HTTP 503 ("Temporarily Down", retry-after 3600). Gutendex (the catalog API the handoff names) returns HTTP 403 to scripts behind a Cloudflare challenge, so the script does not use it. Re-run `npm run export:corpus` after Gutenberg is back.
